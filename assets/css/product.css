@@ -1,0 +1,782 @@
+/*========home========*/
+/*z-index*/
+
+
+/*animation*/
+
+
+/*b-lazy*/
+.b-lazy {
+  opacity:0;
+}
+.b-loaded {
+  opacity:1;
+}
+
+
+/**{
+  border: solid 1px #000;
+}*/
+
+/*main*/
+
+/*==========共用==========*/
+span.middle-line {
+  width: 1px;
+  height: 105px;
+  background-color: #cccccc;
+  margin: 0 auto;
+
+  display: block;
+}
+/*==========共用 end==========*/
+
+/*==========article banner==========*/
+article.banner {
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  /*background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;*/
+
+  position: relative;
+}
+
+section.bg {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  position: relative;
+}
+section.bg:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  display: block;
+}
+
+section.slogan {
+  overflow: hidden;
+
+  position: absolute;
+  left: 10%;
+  bottom: 35%;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in,opacity 1s ease-in;
+}
+article.banner.work section.slogan {
+  opacity: 1;
+  transform: translate3d(0,0,0)!important;
+}
+section.slogan h2 {
+  font-size: 4rem;
+  font-family: 'kokila';
+  color: #fff;
+  letter-spacing: 2px;
+  line-height: 0.8;
+}
+section.slogan h3 {
+  font-size: 2.125rem;
+  font-family: 'kokila';
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+section.vice-slogan {
+  position: absolute;
+  left: 10%;
+  bottom: 15%;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in 1s,opacity 1s ease-in 1s;
+}
+article.banner.work section.vice-slogan {
+  opacity: 1;
+  transform: translate3d(0,0,0)!important;
+}
+section.vice-slogan h2 {
+  font-size: 1.75rem;
+  font-family: 'kokila';
+  color: #fff;
+  letter-spacing: 1px;
+
+  display: flex;
+}
+section.vice-slogan h2:before {
+  content: '';
+  width: 70px;
+  height: 1px;
+  background-color: rgba(255,255,255,0.5);
+  margin-top: 9px;
+  margin-right: 9px;
+
+  display: block;
+}
+section.vice-slogan p {
+  font-size: 0.95rem;
+  font-family: '微軟正黑體';
+  color: #fff;
+  max-width: 535px;
+  letter-spacing: 0.5px;
+}
+
+article.banner span.start {
+  cursor: pointer;
+  color: #fff;
+  margin-left: -18px;
+
+  position: absolute;
+  left: 50%;
+  bottom: 25px;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in 1.5s,opacity 1s ease-in 1.5s;
+}
+article.banner.work span.start {
+  opacity: 1;
+  transform: translate3d(0,0,0)!important;
+}
+
+@media (max-width:640px) {
+  section.slogan,
+  section.vice-slogan {
+    right: 10%;
+  }
+}
+
+@media (max-height:570px) {
+  section.slogan {
+    bottom: 42%;
+  }
+}
+
+@media (max-height: 560px) and (orientation: landscape) {
+
+}
+
+/*==========article banner end==========*/
+
+
+/*==========nav anchor-nav==========*/
+nav.anchor-nav {
+  width: 100%;
+  height: 0px;
+  background-color: #f2f2f2;
+  overflow: hidden;
+
+  transition: all .8s ease;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  -ms-transition: all .8s ease;
+}
+nav.anchor-nav ul {
+  width: 100%;
+  max-width: 900px;
+  padding: 65px 0;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+nav.anchor-nav ul li {
+  font-size: 1.25rem;
+  font-family: 'kokila';
+  color: #a6a6a6;
+  margin: 0 20px;
+  letter-spacing: 1px;
+
+  position: relative;
+}
+nav.anchor-nav ul li a {
+}
+nav.anchor-nav ul li a:after {
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #000;
+
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+
+  display: block;
+
+  transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+}
+nav.anchor-nav ul li a:hover {
+  color: #000;
+}
+nav.anchor-nav ul li a:hover:after {
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+nav.anchor-nav ul.go-hide {
+  width: 800px;
+  max-width: 800px;
+  padding: 0;
+  margin-left: -400px;
+
+  position: fixed;
+  top: 31px;
+  left: 50%;
+  z-index: 4;
+}
+nav.anchor-nav ul.go-hide li {
+  font-size: 1.2rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  letter-spacing: 0.5px;
+  color: #000;
+  margin: 0;
+
+  display: flex;
+}
+nav.anchor-nav ul.go-hide li:after {
+  content: '';
+  width: 1px;
+  height: 12px;
+  font-size: 0.8rem;
+  background-color: #000;
+  margin: 0 15px;
+  opacity: 0.2;
+  display: block;
+}
+nav.anchor-nav ul.go-hide li:last-child:after {
+  display: none;
+}
+
+nav.anchor-nav ul.go-hide li a:hover:after {
+  width: calc(100% - 30px);
+}
+
+nav.anchor-nav.open {
+  height: 150px;
+}
+
+@media (max-width:1600px) {
+  nav.anchor-nav ul.go-hide {
+    left: 45%;
+  }
+}
+
+@media (max-width:768px) {
+  nav.anchor-nav ul li {
+    margin: 0 17px;
+  }
+  nav.anchor-nav ul li a:hover {
+    color: #a6a6a6;
+  }
+  nav.anchor-nav ul li a:hover:after {
+    display: none;
+  }
+}
+@media (max-width:767px) {
+  .slick-prev, .slick-next {
+    visibility: hidden;
+  }
+  nav.anchor-nav ul {
+    width: 50%;
+
+    position: relative;
+  }
+  nav.anchor-nav ul li {
+    text-align: center;
+    margin: 0;
+    padding: 0 30px;
+  }
+  nav.anchor-nav ul div.slick-current li a {
+    color: #000;
+  }
+  .prev-button,.next-button {
+    font-size: 2rem;
+    color: #7f7f7f;
+    margin-top: -16px;
+
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+  }
+  .prev-button {
+    left: 0;
+  }
+  .next-button {
+    transform: rotate(180deg);
+
+    right: 0;
+  }
+}
+
+@media (max-width:640px) {
+  nav.anchor-nav ul {
+    width: 70%;
+  }
+}
+
+@media (max-width:480px) {
+  nav.anchor-nav ul {
+    width: 90%;
+  }
+  .prev-button,.next-button {
+    z-index: 1;
+  }
+}
+
+/*==========nav anchor-nav end==========*/
+
+
+/*==========article about==========*/
+
+article.about span.middle-line {
+  height: 0;
+
+  transition: all .5s ease .5s;
+  -webkit-transition: all .5s ease .5s;
+  -moz-transition: all .5s ease .5s;
+  -o-transition: all .5s ease .5s;
+  -ms-transition: all .5s ease .5s;
+}
+article.about span.middle-line.work {
+  height: 105px;
+}
+
+article.about {
+  padding: 65px 20px;
+  /*opacity: 0;*/
+}
+article.about section {
+  max-width: 1100px;
+  margin: 0 auto 70px auto;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+article.about section div {
+  width: 50%;
+}
+article.about section div:first-child {
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in,opacity 1s ease-in;
+}
+article.about section.work div:first-child {
+  opacity: 1;
+  transform: translate3d(0,0,0)!important;
+}
+article.about section div:last-child {
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in .8s,opacity 1s ease-in .8s;
+}
+article.about section.work div:last-child {
+  opacity: 1;
+  transform: translate3d(0,0,0)!important;
+}
+
+div.left {
+  padding-left: 9%;
+}
+div.left h2 {
+  font-size: 2.5rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  letter-spacing: 1.2px;
+  margin-bottom: 5px;
+}
+div.left h3 {
+  font-size: 1.25rem;
+  font-family: '微軟正黑體','kokila','Century Gothic';
+  line-height: 1.6;
+  color: #000042;
+}
+
+div.right {
+  text-align: left;
+}
+div.right p {
+  font-size: 0.95rem;
+  font-family: '微軟正黑體','kokila','Century Gothic';
+  max-width: 440px;
+  margin: 0 0 32px 0;
+  line-height: 1.6;
+}
+div.right p:last-child {
+  margin: 0;
+}
+
+@media (max-width:640px) {
+  article.about section {
+    flex-wrap: wrap;
+  }
+  article.about section div {
+    width: 100%;
+  }
+  div.right {
+    padding-left: 16%;
+  }
+}
+
+/*==========article about end==========*/
+
+
+/*==========article block==========*/
+section div.box.vertical div.image {
+  max-width: 548px;
+  max-height: 666px;
+  height: 0;
+  padding-bottom: 121.7%;
+}
+section div.box.horizontal div.image {
+  max-width: 548px;
+  max-height: 367px;
+  height: 0;
+  padding-bottom: 67%;
+}
+
+article.block{
+  padding: 0 20px;
+  margin-bottom: 70px;
+}
+article.block section {
+  max-width: 1104px;
+  margin: 0 auto;
+}
+section div.box {
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+.grid-sizer,
+.grid-item {
+  width: 50%;
+  padding: 0 2px;
+}
+
+section div.box div.image img {
+  display: block;
+}
+
+section div.box div.intro {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  transition: all .8s ease;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  -ms-transition: all .8s ease;
+}
+
+section div.box div.intro div {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(27, 27, 78, 0.93);
+  text-align: center;
+  margin: 0 auto;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div.intro div h2 {
+  font-size: 1.625rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  margin: 15px 0 4px 0;
+  max-width: 190px;
+}
+div.intro div h3 {
+  font-size: 1rem;
+  font-family: '微軟正黑體','kokila','Century Gothic';
+  margin: 0;
+  padding-bottom: 20px;
+  max-width: 160px;
+}
+div.intro div p {
+  font-size: 0.95rem;
+  font-family: '微軟正黑體','kokila','Century Gothic';
+  margin: 0 0 18px 0;
+  line-height: 1.5;
+}
+
+section div.box.vertical div.intro div p {
+  width: 190px;
+}
+section div.box.horizontal div.intro div p {
+  width: 300px;
+}
+
+div.intro div h3:after {
+  content: '';
+  width: calc(100% + 10px);
+  height: 1px;
+  background-color: #544f70;
+  margin-top: 20px;
+  margin-left: -5px;
+
+  display: block;
+}
+
+div.intro div .cross {
+  width: 26px;
+  height: 26px;
+}
+div.intro div .cross:before {
+  width: 26px;
+  left: 0;
+  margin-left: 0;
+}
+div.intro div .cross:after {
+  height: 26px;
+  top: 0;
+  margin-top: 0;
+}
+
+/*動畫*/
+section div.box div.intro {
+  opacity: 0;
+  z-index: -1;
+}
+section div.box:hover div.intro {
+  opacity: 1;
+  z-index: 1;
+}
+section div.box.vertical div.intro {
+  padding: 15% 10%;
+}
+section div.box.horizontal div.intro {
+  padding: 3% 2%;
+}
+section div.box.vertical:hover div.intro {
+  padding: 25% 20%;
+}
+section div.box.horizontal:hover div.intro {
+  padding: 7% 5%;
+}
+
+@media (max-width:1024px) {
+  section div.box.horizontal div.intro {
+    padding: 0;
+  }
+  section div.box.horizontal:hover div.intro {
+    padding: 3% 3%;
+  }
+
+  section div.box.vertical:hover div.intro {
+    padding: 20% 15%;
+  }
+}
+
+@media (max-width:767px) {
+  article.block section {
+    max-width: 550px;
+  }
+  .grid-sizer,
+  .grid-item {
+    width: 100%;
+    padding: 0;
+  }
+  section div.box {
+    padding-top: 100px;
+    margin-bottom: 40px;
+  }
+  section div.box div.intro {
+    height: 100px;
+    padding: 0;
+    color: #000;
+
+    opacity: 0;
+    z-index: 0;
+
+    transition: all 1s ease 1s;
+    -webkit-transition: all 1s ease 1s;
+    -moz-transition: all 1s ease 1s;
+    -o-transition: all 1s ease 1s;
+    -ms-transition: all 1s ease 1s;
+  }
+  section div.box div.intro.show {
+    opacity: 1;
+  }
+  section div.box.vertical div.intro,
+  section div.box.horizontal div.intro {
+    padding: 0;
+  }
+  section div.box div.intro div {
+    background-color: #fff;
+  }
+  div.intro div p,
+  div.intro div .cross,
+  div.intro div h3:after {
+    display: none;
+  }
+
+  section div.box.vertical:hover div.intro,
+  section div.box.horizontal:hover div.intro {
+    padding: 0;
+  }
+}
+
+/*==========article block end==========*/
+
+
+/*==========article service==========*/
+
+article.service {
+  padding: 0 20px 135px 20px;
+  /*opacity: 0;*/
+}
+article.service section {
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+section span.middle-line {
+  margin: 0 auto 60px auto;
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform .5s ease-in,opacity .5s ease-in;
+}
+section span.middle-line.work {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+article.service section h2 {
+  font-size: 2.5rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  margin-bottom: 10px;
+  max-width: 330px;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in,opacity 1s ease-in;
+}
+article.service section h2.work {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+article.service section h3 {
+  font-size: 0.95rem;
+  font-family: '微軟正黑體','kokila','Century Gothic';
+  margin-bottom: 26px;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in .5s,opacity 1s ease-in .5s;
+}
+article.service section h3.work {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+section a.btn {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 24px auto;
+  border-radius: 50%;
+  background-color: #505381;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  opacity: 0;
+  transform: scale(.2,.2);
+  transition: transform 1s ease-in 1s,opacity 1s ease-in 1s;
+}
+section a.btn.work {
+  opacity: 1;
+  transform: scale(1,1);
+}
+section a.btn span.icon-mail {
+  font-size: 1.5rem;
+}
+section a.btn p {
+  font-size: 0.875rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  margin: 0;
+  line-height: 1;
+  letter-spacing: 0.6px;
+}
+
+section div.tel {
+  font-size: 1.125rem;
+  font-family: 'kokila','Century Gothic','微軟正黑體';
+  margin: 0 auto;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+  transition: transform 1s ease-in 1.5s,opacity 1s ease-in 1.5s;
+}
+section div.tel.work {
+  opacity: 1;
+  transform: translate3d(0,0,0);
+}
+section div.tel span {
+  color: #505381;
+  padding-right: 4px;
+}
+section div.tel p {
+  max-width: 520px;
+  margin: 0;
+  line-height: 1;
+}
+section div.tel:after {
+  content: '';
+  width: calc(100% + 26px);
+  height: 1px;
+  background-color: #505381;
+
+  position: absolute;
+  left: -13px;
+  bottom: 0;
+
+  display: block;
+}
+
+/*==========article service end==========*/
+
+
+
+
+/**/

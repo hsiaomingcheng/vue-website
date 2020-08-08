@@ -1,0 +1,106 @@
+/*******************************************/
+/*                                         */
+/*              cgpagechange A             */
+/*                                         */
+/*******************************************/
+#cgAbox{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left:0;
+}
+.cgA1{
+    width:100vw;
+    height:100vh;
+    background-color: #fff;
+    position: fixed;
+    z-index: 1111112;
+    top: 0;
+    left:-100vw;
+}
+.cgA2{
+    width:auto;
+    height:auto;
+    /*background-color: #0c0c0c;*/
+    position: fixed;
+    z-index: 1111112;
+    top: 50%;
+    left: 50%;
+
+    margin-left: -42px;
+    margin-top: -42px;
+
+    opacity: 0;
+}
+
+
+/*******************************************/
+/*                                         */
+/*              cgpagechange B             */
+/*                                         */
+/*******************************************/
+#cgBbox{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left:0;
+}
+.cgB1{
+    width:100vw;
+    height:100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    top: -100vh;
+    left:0;
+}
+.cgB2{
+    width:100vw;
+    height:100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    bottom:-100vh;
+    left:0;
+}
+
+
+
+/*******************************************/
+/*                                         */
+/*              cgpagechange C             */
+/*                                         */
+/*******************************************/
+#cgCbox{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    z-index: 1111111;
+    display: none;
+    top: 0;
+    left:0;
+}
+.cgC1{
+    width:0.5px;
+    height:100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    left:50vw;
+    top:-100vh;
+}
+.cgC2{
+    width:0.5px;
+    height:100vh;
+    background-color: #0c0c0c;
+    position: fixed;
+    z-index: 1111112;
+    right:50vw;
+    top:-100vh;
+}
