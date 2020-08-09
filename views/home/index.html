@@ -58,7 +58,7 @@
       <nav>
         <ul>
           <li v-for="(item, key) in handleHeaderNav">
-            <a :href="combinationUrl(key)" class="link">{{item.name}}</a>
+            <a :href="combinationNavUrl(key)" class="link">{{item.name}}</a>
           </li>
           <li><a href="javascript:void(0)" class="icon-earth"></a></li>
           <li>
@@ -75,7 +75,7 @@
         <section>
           <ul class="nav-menu">
             <li v-for="(item, key) in handleOverlayNav">
-              <a :href="combinationUrl(key)">{{item.name}}</a>
+              <a :href="combinationNavUrl(key)">{{item.name}}</a>
             </li>
           </ul>
           <ul class="last-new">
@@ -111,16 +111,9 @@
       <article id="IND1" class="banner">
         <section class="flexslider">
           <div class="slides">
-            <a href="javascript:void(0)" class="slide-group" style="background-image: url(../../upload/home/banner/banner-pic1.jpg)">
+            <a v-for="item in bannerSlide" href="javascript:void(0)" class="slide-group" :style="bannerSlideImage(item.image)">
               <div>
-                <p>「美」味獨特</p>
-                <p>「淳」香自然</p>
-              </div>
-            </a>
-            <a href="javascript:void(0)" class="slide-group" style="background-image: url(../../upload/home/banner/banner-pic2.jpg)">
-              <div>
-                <p>我們創造香味</p>
-                <p>使生活充滿藝術與美好</p>
+                <p v-for="text in item.text">{{text}}</p>
               </div>
             </a>
           </div>
@@ -131,161 +124,27 @@
         <h2>Smell the World</h2>
         <h3>以天然為準，提供香料解決方案的全面服務</h3>
         <ul class="carousel small-block">
-            <li id="box">
-              <picture>
-                <img src="../../upload/home/product/product-pic1.jpg" alt="">
-              </picture>
-              <!-- 如果文字要擺左邊，就使用left這個class，文字擺右邊，就使用right這個class -->
-              <div class="left">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Tea</span>
-                  <span class="c-t">茶類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="pro-icon">
-                  <img src="../../upload/home/product/tea.png" alt="">
-                </span>
-                <span class="e-t">Tea</span>
-                <span class="c-t">茶類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic2.jpg" alt="">
-              </picture>
-              <div class="left">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Fruit & Vegitable</span>
-                  <span class="c-t">蔬果類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="pro-icon">
-                  <img src="../../upload/home/product/fruit-icon.png" alt="">
-                </span>
-                <span class="e-t">Fruit & Vegitable</span>
-                <span class="c-t">蔬果類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic3.jpg" alt="">
-              </picture>
-              <div class="right">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Beans</span>
-                  <span class="c-t">豆類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="icon-earth pro-icon"></span>
-                <span class="e-t">Beans</span>
-                <span class="c-t">豆類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic4.jpg" alt="">
-              </picture>
-              <div class="left">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Nuts</span>
-                  <span class="c-t">堅果類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="pro-icon">
-                  <img src="../../upload/home/product/nuts.png" alt="">
-                </span>
-                <span class="e-t">Nuts</span>
-                <span class="c-t">堅果類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic5.jpg" alt="">
-              </picture>
-              <div class="left">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Syrup</span>
-                  <span class="c-t">糖漿</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="pro-icon">
-                  <img src="../../upload/home/product/syrup.png" alt="">
-                </span>
-                <span class="e-t">Syrup</span>
-                <span class="c-t">糖漿</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic6.jpg" alt="">
-              </picture>
-              <div class="left">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Milk</span>
-                  <span class="c-t">乳類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="icon-earth pro-icon"></span>
-                <span class="e-t">Milk</span>
-                <span class="c-t">乳類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic7.jpg" alt="">
-              </picture>
-              <div class="right">
-                <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
-                  <span class="e-t">Flower</span>
-                  <span class="c-t">花類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="icon-earth pro-icon"></span>
-                <span class="e-t">Flower</span>
-                <span class="c-t">花類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
-            <li>
-              <picture>
-                <img src="../../upload/home/product/product-pic8.jpg" alt="">
-              </picture>
-              <div class="right">
-                <p style="color:#fff; border-bottom: solid 1px rgba(255, 255, 255, 0.5);">
-                  <span class="e-t">Other</span>
-                  <span class="c-t">其他類</span>
-                </p>
-              </div>
-              <div class="no-show">
-                <span class="pro-icon">
-                  <img src="../../upload/home/product/other.png" alt="">
-                </span>
-                <span class="e-t">Other</span>
-                <span class="c-t">其他類</span>
-                <span class="slogan">或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。</span>
-                <span class="cross white"></span>
-              </div>
-            </li>
+          <li v-for="(item, key) in productCategory">
+            <picture>
+              <img :src="combinationProductUrl(key)" :alt="item.cn">
+            </picture>
+            <!-- 如果文字要擺左邊，就使用left這個class，文字擺右邊，就使用right這個class -->
+            <div class="left">
+              <p style="color:#000; border-bottom: solid 1px rgba(0, 0, 0, 0.5);">
+                <span class="e-t">{{item.en}}</span>
+                <span class="c-t">{{item.tw}}</span>
+              </p>
+            </div>
+            <div class="no-show">
+              <span class="pro-icon">
+                <img src="../../upload/home/product/tea.png" alt="">
+              </span>
+              <span class="e-t">{{item.en}}</span>
+              <span class="c-t">{{item.tw}}</span>
+              <span class="slogan">{{item.slogan}}</span>
+              <span class="cross white"></span>
+            </div>
+          </li>
         </ul>
         <a href="javascript:void(0)" class="hvr-bounce-to-bottom">瀏覽全系列</a>
       </article>
@@ -294,29 +153,13 @@
         <h3>美淳嚴格品控，致力於提供客戶「質優、穩定且安全」的產品</h3>
         <section>
           <ul>
-            <li class="slide-btn">
+            <li v-for="item in aboutList" class="slide-btn">
               <div>
-                <h2>QULITY</h2>
-                <span>品質</span>
+                <h2>{{item.title}}</h2>
+                <span>{{item.subTitle}}</span>
                 <span class="xx"></span>
               </div>
-              <p class="slide-info">卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。</p>
-            </li>
-            <li class="slide-btn">
-              <div>
-                <h2>TECHNOLOGY</h2>
-                <span>技術</span>
-                <span class="xx"></span>
-              </div>
-              <p class="slide-info">卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。</p>
-            </li>
-            <li class="slide-btn">
-              <div>
-                <h2>SERVICE</h2>
-                <span>服務</span>
-                <span class="xx"></span>
-              </div>
-              <p class="slide-info">卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。</p>
+              <p class="slide-info">{{item.text}}</p>
             </li>
           </ul>
         </section>
@@ -414,36 +257,12 @@
         <a href="javascript:void(0)" class="hvr-bounce-to-bottom">更多訊息</a>
       </article>
       <article class="dot-dot">
-        <p class="change-word" data-navTXT>MAY CHEN</p>
+        <p class="change-word" data-navTXT>{{title}}</p>
         <ul id="navPAGE">
-          <li>
-            <a href="#IND1">
+          <li v-for="(dot, key) in dots">
+            <a :href="handleDot(key)">
               <div></div>
-              <span class="word">MAY CHEN</span>
-            </a>
-          </li>
-          <li>
-            <a href="#IND2">
-              <div></div>
-              <span class="word">PRODUCT</span>
-            </a>
-          </li>
-          <li>
-            <a href="#IND3">
-              <div></div>
-              <span class="word">ABOUT</span>
-            </a>
-          </li>
-          <li>
-            <a href="#IND4">
-              <div></div>
-              <span class="word">CAPABILITY</span>
-            </a>
-          </li>
-          <li>
-            <a href="#IND5">
-              <div></div>
-              <span class="word">NEWS</span>
+              <span class="word">{{dot}}</span>
             </a>
           </li>
         </ul>
@@ -455,7 +274,7 @@
         <nav>
           <ul>
             <li v-for="(item, key) in handleFooterNav">
-              <a :href="combinationUrl(key)">{{item.text}}</a>
+              <a :href="combinationNavUrl(key)">{{item.text}}</a>
             </li>
           </ul>
         </nav>
@@ -552,6 +371,7 @@
     el: '#app',
     data: {
       title: 'MAY CHEN',
+      dots: ['MAY CHEN', 'PRODUCT', 'ABOUT', 'CAPABILITY', 'NEWS'],
       menuList: [
         {
           path: 'home',
@@ -591,7 +411,92 @@
       ],
       overlayNav: ['about', 'capbility', 'product', 'knowledge', 'contact'],
       headerNav: ['about', 'product', 'contact'],
-      footerNav: ['about', 'capbility', 'product', 'news']
+      footerNav: ['about', 'capbility', 'product', 'news'],
+      bannerSlide: [
+        {
+          text: ['「美」味獨特', '「淳」香自然'],
+          image: '../../upload/home/banner/banner-pic1.jpg' 
+        },
+        {
+          text: ['我們創造香味', '使生活充滿藝術與美好'],
+          image: '../../upload/home/banner/banner-pic2.jpg' 
+        }
+      ],
+      productCategory: [
+        {
+          tw: '茶類',
+          en: 'Tea',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic1.jpg',
+          icon: 'tea.png'
+        },
+        {
+          tw: '蔬果類',
+          en: 'Fruit & Vegitable',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic2.jpg',
+          icon: 'fruit-icon.png'
+        },
+        {
+          tw: '豆類',
+          en: 'Beans',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic2.jpg',
+          icon: 'fruit-icon.png'
+        },
+        {
+          tw: '堅果類',
+          en: 'Nuts',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic4.jpg',
+          icon: 'nuts.png'
+        },
+        {
+          tw: '糖漿',
+          en: 'Syrup',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic5.jpg',
+          icon: 'syrup.png'
+        },
+        {
+          tw: '乳類',
+          en: 'Milk',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic6.jpg',
+          icon: 'syrup.png'
+        },
+        {
+          tw: '花類',
+          en: 'Flower',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic7.jpg',
+          icon: 'tea.png'
+        },
+        {
+          tw: '其他類',
+          en: 'Other',
+          slogan: '或炒或烘的濃郁味道，喚起咀嚼堅果時的清脆聲音。',
+          image: 'product-pic8.jpg',
+          icon: 'other.png'
+        }
+      ],
+      aboutList: [
+        {
+          title: 'QULITY',
+          subTitle: '品質',
+          text: '卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。'
+        },
+        {
+          title: 'TECHNOLOGY',
+          subTitle: '技術',
+          text: '卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。'
+        },
+        {
+          title: 'SERVICE',
+          subTitle: '服務',
+          text: '卓越技術，精準實現需求，培養優越的技術團隊與能量，專業提供客戶專屬且準確的香料開發，並堅持遵守產品之保密承諾。'
+        }
+      ]
     },
     computed: {
       handleOverlayNav: function() {
@@ -602,12 +507,22 @@
       },
       handleFooterNav: function() {
         return this.handleNav(this.footerNav);
+      },
+      handleDot: function(key) {
+        return '#IND'+key;
       }
     },
     methods: {
-      combinationUrl: function(key) {
+      combinationNavUrl: function(key) {
         // 組合網址
         return `../${this.menuList[key].path}/index.html`;
+      },
+      combinationProductUrl: function(key) {
+        // 組合網址
+        return `../../upload/home/product/${this.productCategory[key].image}`;
+      },
+      bannerSlideImage: function(key) {
+        return `background-image: url(${key})`;
       },
       handleNav: function(nav) {
         // 用nav對menuList做歷遍比對
